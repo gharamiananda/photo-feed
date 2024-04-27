@@ -1,24 +1,26 @@
+import { TPhotoCard } from "@/lib/image-data"
+import React from "react"
+import PhotoCard from "./PhotoCard"
 
-const PhotoFeed = () => {
+const PhotoList:React.FC<{photos:TPhotoCard[]|undefined}> = ({photos}) => {
+
+  console.log('photos', photos)
   return (
     <div className="container my-4 lg:my-8">
     <div className="img-grid">
-   
-      <a href="./single.html" className="group">
-        {/* <Image
-        width={100}
-        height={100}
-        src="https://source.unsplash.com/ztpUS4N1xhY" alt="" /> */}
 
-       
-        <div className="title-container">
-          <h4 className="title">The Beautiful Nature</h4>
-        </div>
-      </a>
-    
-    </div>
+   {
+   photos && photos.length>0 && (
+    photos.map((photo) =>(
+      <PhotoCard key={photo.id} photoInfo={photo} />
+    ))
+
+   )
+   }
   </div>
+  </div>
+
   )
 }
 
-export default PhotoFeed
+export default PhotoList

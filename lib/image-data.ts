@@ -1,3 +1,21 @@
+
+export type TPhotoCard={
+  id: string;
+  title: string;
+  url: string;
+  tags: string[];
+  views: string;
+  share: string;
+  uploaded: string;
+  author: {
+      avatar: string;
+      name: string;
+      bio: string;
+      followers: number;
+  };
+  likes: number;
+}
+
 const photos = [
     {
       id: "94a7e01b-8576-4d18-8b84-6ae588db02d9",

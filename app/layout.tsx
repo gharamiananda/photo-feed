@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import PhotoFeed from "@/components/PhotoFeed";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -21,9 +20,11 @@ export default function RootLayout({
       <body className={inter.className}>
      <Navbar />
 
-  <PhotoFeed />
         
-        {children}</body>
+        {children}
+        <div id="modal-root-content"/>
+        
+        </body>
     </html>
   );
 }
